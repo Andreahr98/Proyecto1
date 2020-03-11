@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Montserrat&display=swap');
+
+
+$color1: white;
+$color2: black;
+
+$types: (text, radio, date);
+
+@mixin input($type) {
+  @if $type==text {
+    color: blue;
+  }
+
+  @else if $type==radio {
+    display: inline-block;
+  }
+
+  @else if $type==date {
+    margin: 5px;
+  }
+
+  @else {
+    display: block;
+  }
+}
+
+@each $type in $types {
+  .in-#{$type} {
+    @include input($type);
+  }
+}
+
+
+
+
+.menu-items {
+  margin: 0;
+  top: 50%;
+
+  li {
+    display: inline-block;
+    height: 100%;
+    padding: 0 50px 0 50px;
+
+    :hover {
+      background-color: #6c59f0;
+
+    }
+
+
+    a {
+      font-size: 16px;
+      text-decoration: none;
+      float: inherit;
+      color: white;
+    }
+
+  }
+}
+
+
+
+
+body {
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
+  background-color: mediumspringgreen;
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+}
+
+/*header*/
+
+.title h1 {
+  padding: 20;
+  text-align: center;
+  font-size: 2.99em;
+  color: $color2;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.container {
+  background-color: $color1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 1.6em auto;
+}
+
+.container.mainbox {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.container>.header,
+.container>.content,
+.container>.sidebar,
+.container>.footer,
+.container>.div {
+  background-color: $color1;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.container .header,
+.container .footer {
+  background-color: #00052e;
+  color: $color1;
+
+}
+
+.container .article {
+  background-color: #d3e0d8;
+  padding: 20px;
+  margin-top: 25px;
+  color: $color2;
+  border-radius: 6px;
+}
+
+.container .header {
+  margin-top: 10px;
+}
+
+
+.container .sidebar {
+  background: #d3e0d8;
+  color: $color2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+.formulario {
+  margin-top: 15px;
+}
+
+.maincontent {
+  padding: 15px;
+}
